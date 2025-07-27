@@ -1,4 +1,5 @@
-pydantic
+dlt[postgres]
 requests
-psycopg[binary]
+pydantic
 PyYAML
+loguru

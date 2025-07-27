@@ -84,3 +84,12 @@ cython_debug/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Secrets and sensitive information
+*.secrets.toml
+*.env
+# Ignore DLT secrets and configuration files
+.dlt/secrets.toml
+
+# Ignore DLT configuration files
+.dlt/config.toml

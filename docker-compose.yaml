@@ -1,0 +1,21 @@
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: ynab_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ynab_db
+      POSTGRES_USER: ynab_user
+      POSTGRES_PASSWORD: ynab_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "ynab_user"]
+      interval: 5s
+      retries: 5
+
+volumes:
+  pgdata:
